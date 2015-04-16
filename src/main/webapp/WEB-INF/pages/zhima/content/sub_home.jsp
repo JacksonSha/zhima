@@ -60,11 +60,11 @@
 </div><!--//primary-->
 
 <div class="secondary col-md-4 col-sm-12 col-xs-12">
-	<aside class="info aside section">
+	<aside class="section">
 		<div class="section-inner">
 			<div class="guanzhu">芝麻加糖微信号</div>
 			<a href="/" class="weixin">
-			<img style="width:100%; max-width:25rem;" src="${pageContext.request.contextPath}/webresource/images/weixin.jpg"/>
+			<img style="width:100%; max-width:25rem;" src="${pageContext.request.contextPath}/webresource/images/weixin.png"/>
 			</a>
 			
 			<!-- <h2 class="heading sr-only">基本信息</h2>
@@ -78,11 +78,11 @@
 			 -->
 		</div><!--//section-inner-->
 	</aside><!--//aside-->
-	<aside class="list music aside section">
+	<aside class="section">
 		<div class="section-inner">
 			<h3 class="section-heading lastest-head">最新文章</h3>
 			<div class="content">
-				<ul class="list-ranking">
+				<ul class="rank-list">
 					<li><a href="/" target="_blank">阿里云服务器选型</a></li>
 					<li><a href="/" target="_blank">数据库查询优化</a></li>
 					<li><a href="/" target="_blank">Web应用的缓存设计模式</a></li>

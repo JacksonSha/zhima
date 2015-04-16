@@ -111,6 +111,11 @@ iframe {
 body {
   background:#EEEEEE;
 }
+.clear {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
 .banner {
   width: 100%;
   height: 0px;
@@ -395,13 +400,12 @@ header .navbar-fixed-top {
 	}
 }
 
-.section-inner ul.list-ranking {
+.section-inner ul.rank-list {
 	list-style: none;
 	padding: 0px;
 	background: url(../images/rank-list.png) no-repeat 0px 15px;
 }
-
-.section-inner ul.list-ranking li {
+.section-inner ul.rank-list li {
 	margin-bottom: 1rem;
 	border-bottom: solid 1px #EAEAEA;
 	/* line-height: 30px; */
@@ -410,13 +414,53 @@ header .navbar-fixed-top {
 	font-size: 14px;
 	padding: 10px 0 0 30px;
 }
-.section-inner ul.list-ranking li:hover {
+.section-inner ul.rank-list li:hover {
 	border-bottom: #666 1px solid;
 }
-.section-inner ul.list-ranking li a:hover {
+.section-inner ul.rank-list li a:hover {
 	color: #000;
 	text-decoration: none;
 }
+
+.section-inner ul.tag-list {
+	padding: 0;
+	list-style: none;
+}
+.section-inner ul.tag-list li {
+	/* line-height: 24px;
+	height: 24px; */
+	display: block;
+	background: #999;
+	float: left;
+	padding: 0.3rem 1rem;
+	margin: 0.3rem 0.3rem;
+	border-radius: 0.8rem;
+	-moz-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	transition: all 0.4s;
+}
+.section-inner ul.tag-list li a {
+	color: #FFF;
+	font-size: 1rem;
+}
+.section-inner ul.tag-list li:hover {
+	opacity: 0.8;
+}
+.section-inner ul.tag-list li a:hover {
+	text-decoration: none;
+}
+.section-inner ul.tag-list li:nth-child(8n-7) { background: #8A9B0F }
+.section-inner ul.tag-list li:nth-child(8n-6) { background: #EB6841 }
+.section-inner ul.tag-list li:nth-child(8n-5) { background: #3FB8AF }
+.section-inner ul.tag-list li:nth-child(8n-4) { background: #FE4365 }
+.section-inner ul.tag-list li:nth-child(8n-3) { background: #FC9D9A }
+.section-inner ul.tag-list li:nth-child(8n-2) { background: #EDC951 }
+.section-inner ul.tag-list li:nth-child(8n-1) { background: #C8C8A9 }
+.section-inner ul.tag-list li:nth-child(8n) { background: #83AF9B }
+.section-inner ul.tag-list li:first-child { background: #036564 }
+.section-inner ul.tag-list li:last-child { background: #3299BB }
+
 /* ======= Sections======= */
 .sections-wrapper {
   padding-top: 2rem;
