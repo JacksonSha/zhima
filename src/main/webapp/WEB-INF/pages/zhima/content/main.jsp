@@ -23,7 +23,7 @@ $(function(){
 	var page = pathname[1];
 	(page=="") && (page="home");
 	//console.log(pathname,page);
-	if(page="home" && page!="blog" && page!="about" && page!="guest"){
+	if(page!="home" && page!="blog" && page!="about" && page!="guest"){
 		window.location.pathname = rootUrl+"/";
 	}
 	$.post(rootUrl+"/show/sub_"+page,null,function(resp){
