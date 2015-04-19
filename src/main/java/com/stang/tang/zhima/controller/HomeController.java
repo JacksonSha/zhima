@@ -33,4 +33,18 @@ public class HomeController extends BaseController {
 		return "content/" + nav;
 	}
 
+	@RequestMapping("/admin/{nav}")
+	private String getAdmin(HttpServletRequest request,
+			@PathVariable(value="nav") String nav) {
+		LOGGER.info(request.getRequestURI());
+		return "content/main";
+	}
+
+	@RequestMapping("/show/admin/{nav}")
+	private String showAdmin(HttpServletRequest request,
+			@PathVariable("nav") String nav) {
+		LOGGER.info(request.getRequestURI());
+		return "content/" + nav;
+	}
+
 }

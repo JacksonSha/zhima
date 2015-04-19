@@ -2,7 +2,7 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <div class="primary col-md-8 col-sm-12 col-xs-12">
-<section class="latest section">
+<section class="section">
 	<div class="section-inner">
 		<h3 class="section-heading">最新文章</h3>
 		<div class="article">

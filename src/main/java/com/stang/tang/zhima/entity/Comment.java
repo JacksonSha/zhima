@@ -2,16 +2,16 @@ package com.stang.tang.zhima.entity;
 
 import java.util.Date;
 
-public class SComment extends BaseEntity {
+public class Comment extends BaseEntity {
 	private static final long serialVersionUID = 5469327721115078492L;
 
 	private Integer id;
-	private Integer articleId;
 	private Integer userId;
+	private Integer articleId;
 	private String content;
 	private Date createDt;
 
-	public SComment() {
+	public Comment() {
 	}
 
 	public Integer getId() {
@@ -22,20 +22,20 @@ public class SComment extends BaseEntity {
 		this.id = id;
 	}
 
-	public Integer getArticleId() {
-		return articleId;
-	}
-
-	public void setArticleId(Integer articleId) {
-		this.articleId = articleId;
-	}
-
 	public Integer getUserId() {
 		return userId;
 	}
 
 	public void setUserId(Integer userId) {
 		this.userId = userId;
+	}
+
+	public Integer getArticleId() {
+		return articleId;
+	}
+
+	public void setArticleId(Integer articleId) {
+		this.articleId = articleId;
 	}
 
 	public String getContent() {

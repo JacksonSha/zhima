@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.stang.tang.zhima.mapper.ArticleMapper">
+	<resultMap id="BaseResultMap" type="article">
+		<id column="ART_ID" property="id" jdbcType="INTEGER" />
+		<result column="ART_ADM_ID" property="adminId" jdbcType="INTEGER" />
+		<result column="ART_TAG_ID" property="tagId" jdbcType="INTEGER" />
+		<result column="ART_AUTHOR" property="author" jdbcType="VARCHAR" />
+		<result column="ART_TITLE" property="title" jdbcType="VARCHAR" />  
+		<result column="ART_HEADIMG" property="headImg" jdbcType="VARCHAR" />
+		<result column="ART_CLICK_NUM" property="clickNum" jdbcType="INTEGER" />
+		<result column="ART_LIKE_NUM" property="likeNum" jdbcType="INTEGER" />
+		<result column="ART_COMMENT_NUM" property="commentNum" jdbcType="INTEGER" />
+		<result column="ART_CONTENT_TEXT" property="contentText" jdbcType="TEXT" />
+		<result column="ART_CONTENT_HTML" property="contentHtml" jdbcType="TEXT" />
+		<result column="ART_CREATE_DT" property="createDt" jdbcType="DATETIME" />
+		<result column="ART_UPDATE_DT" property="updateDt" jdbcType="DATETIME" />
+	</resultMap>
+
+	<sql id="ColumnList">
+	ART_ID,ART_ADM_ID,ART_TAG_ID,ART_AUTHOR,ART_TITLE,ART_HEADIMG,
+	ART_CLICK_NUM,ART_LIKE_NUM,ART_COMMENT_NUM,
+	ART_CONTENT_TEXT,ART_CONTENT_HTML,ART_CREATE_DT,ART_UPDATE_DT
+	</sql>
+
+</mapper>

@@ -5,7 +5,7 @@
 <html lang="zh">
 
 <head>
-<jsp:include page="../common/include.jsp"/>
+<jsp:include page="../../common/include.jsp"/>
 </head>
 
 <body>
@@ -349,7 +349,7 @@
         </div><!--//row-->
     </div><!--//masonry-->
     
-    <jsp:include page="../common/foot.jsp"/>
+    <jsp:include page="../../common/foot.jsp"/>
 </body>
 </html> 
 

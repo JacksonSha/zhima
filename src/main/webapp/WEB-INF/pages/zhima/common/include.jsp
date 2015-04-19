@@ -9,15 +9,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="芝麻加糖的个人博客" />
 <meta name="author" content="沙堂堂" />
-<link rel="shortcut icon" href="favicon.ico">
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/webresource/images/stangtang.ico" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <!--
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic"/>
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:400,700"/>
--->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/webresource/plugins/google-fonts/css/lato.css?family=Lato:300,400,300italic,400italic"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/webresource/plugins/google-fonts/css/montserrat.css?family=Montserrat:400,700"/>
+-->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/webresource/plugins/bootstrap/css/bootstrap.min.css"/>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/webresource/plugins/font-awesome/css/font-awesome.css"/>
 <%--

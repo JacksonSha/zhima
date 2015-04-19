@@ -2,17 +2,20 @@ package com.stang.tang.zhima.entity;
 
 import java.util.Date;
 
-public class SUser extends BaseEntity {
+public class User extends BaseEntity {
 	private static final long serialVersionUID = -478677123152391050L;
 
 	private Integer id;
 	private String name;
 	private String email;
 	private String nickName;
-	private String url;
+	private String password;
+	private String headImg;
+	private String from;
+	private String profile;
 	private Date registerDt;
 
-	public SUser() {
+	public User() {
 	}
 
 	public Integer getId() {
@@ -47,12 +50,36 @@ public class SUser extends BaseEntity {
 		this.nickName = nickName;
 	}
 
-	public String getUrl() {
-		return url;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getHeadImg() {
+		return headImg;
+	}
+
+	public void setHeadImg(String headImg) {
+		this.headImg = headImg;
+	}
+
+	public String getFrom() {
+		return from;
+	}
+
+	public void setFrom(String from) {
+		this.from = from;
+	}
+
+	public String getProfile() {
+		return profile;
+	}
+
+	public void setProfile(String profile) {
+		this.profile = profile;
 	}
 
 	public Date getRegisterDt() {
