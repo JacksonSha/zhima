@@ -19,9 +19,9 @@ CREATE SCHEMA IF NOT EXISTS `stangtang` DEFAULT CHARACTER SET utf8 COLLATE utf8_
 USE `stangtang` ;
 
 -- -----------------------------------------------------
--- Table `S_ADMIN`
+-- Table `BADMIN`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `S_ADMIN` (
+CREATE TABLE IF NOT EXISTS `BADMIN` (
   `ADM_ID` INT NOT NULL AUTO_INCREMENT,
   `ADM_NAME` VARCHAR(50) NULL,
   `ADM_PASSWORD` VARCHAR(100) NULL,
@@ -38,9 +38,9 @@ COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
--- Table `S_USER`
+-- Table `BUSER`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `S_USER` (
+CREATE TABLE IF NOT EXISTS `BUSER` (
   `USR_ID` INT NOT NULL AUTO_INCREMENT,
   `USR_EMAIL` VARCHAR(50) NULL,
   `USR_NAME` VARCHAR(50) NULL,
@@ -57,9 +57,9 @@ COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
--- Table `S_TAG`
+-- Table `RTAG`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `S_TAG` (
+CREATE TABLE IF NOT EXISTS `RTAG` (
   `TAG_ID` INT NOT NULL AUTO_INCREMENT,
   `TAG_NAME` VARCHAR(20) NULL,
   `TAG_DESC` VARCHAR(50) NULL,
@@ -71,9 +71,9 @@ COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
--- Table `S_ARTICLE`
+-- Table `BARTICLE`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `S_ARTICLE` (
+CREATE TABLE IF NOT EXISTS `BARTICLE` (
   `ART_ID` INT NOT NULL AUTO_INCREMENT,
   `ART_ADM_ID` INT NULL,
   `ART_TAG_ID` INT NULL,
@@ -83,8 +83,7 @@ CREATE TABLE IF NOT EXISTS `S_ARTICLE` (
   `ART_CLICK_NUM` INT NULL,
   `ART_LIKE_NUM` INT NULL,
   `ART_COMMENT_NUM` INT NULL,
-  `ART_CONTENT_TEXT` TEXT NULL,
-  `ART_CONTENT_HTML` TEXT NULL,
+  `ART_CONTENT_DESC` VARCHAR(1000) NULL,
   `ART_CREATE_DT` DATETIME NULL,
   `ART_UPDATE_DT` DATETIME NULL,
   PRIMARY KEY (`ART_ID`))
@@ -94,9 +93,34 @@ COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
--- Table `S_COMMENT`
+-- Table `XARTICLE`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `S_COMMENT` (
+CREATE TABLE IF NOT EXISTS `XARTICLE` (
+  `ART_ID` INT NOT NULL,
+  `ART_CONTENT_TEXT` TEXT NULL,
+  `ART_CONTENT_HTML` TEXT NULL,
+  PRIMARY KEY (`ART_ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+
+-- -----------------------------------------------------
+-- Table `LARTTAG`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `LARTTAG` (
+  `LAT_ART_ID` INT NOT NULL,
+  `LAT_TAG_ID` INT NOT NULL,
+  PRIMARY KEY (`LAT_ART_ID`,`LAT_TAG_ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+
+-- -----------------------------------------------------
+-- Table `BCOMMENT`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `BCOMMENT` (
   `CMT_ID` INT NOT NULL AUTO_INCREMENT,
   `CMT_USR_ID` INT NULL,
   `CMT_ART_ID` INT NULL,
@@ -109,9 +133,9 @@ COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
--- Table `S_PARAMETER`
+-- Table `SPARAMETER`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `S_PARAMETER` (
+CREATE TABLE IF NOT EXISTS `SPARAMETER` (
   `PAR_KEY` VARCHAR(20) NOT NULL,
   `PAR_VALUE` VARCHAR(50) NULL,
   PRIMARY KEY (`PAR_KEY`))

@@ -11,6 +11,7 @@
 		<result column="ART_CLICK_NUM" property="clickNum" jdbcType="INTEGER" />
 		<result column="ART_LIKE_NUM" property="likeNum" jdbcType="INTEGER" />
 		<result column="ART_COMMENT_NUM" property="commentNum" jdbcType="INTEGER" />
+		<result column="ART_CONTENT_DESC" property="contentDesc" jdbcType="VARCHAR" />
 		<result column="ART_CONTENT_TEXT" property="contentText" jdbcType="LONGVARCHAR" />
 		<result column="ART_CONTENT_HTML" property="contentHtml" jdbcType="LONGVARCHAR" />
 		<result column="ART_CREATE_DT" property="createDt" jdbcType="DATE" />
@@ -20,13 +21,13 @@
 	<sql id="ColumnList">
 	ART_ID,ART_ADM_ID,ART_TAG_ID,ART_AUTHOR,ART_TITLE,ART_HEADIMG,
 	ART_CLICK_NUM,ART_LIKE_NUM,ART_COMMENT_NUM,
-	ART_CONTENT_TEXT,ART_CONTENT_HTML,ART_CREATE_DT,ART_UPDATE_DT
+	ART_CONTENT_DESC,ART_CONTENT_TEXT,ART_CONTENT_HTML,ART_CREATE_DT,ART_UPDATE_DT
 	</sql>
 
 	<select id="getArticlesByPage" resultMap="BaseResultMap">
-		SELECT a.* FROM S_ARTICLE a 
+		SELECT a.* FROM BARTICLE a 
 		RIGHT JOIN 
-		(SELECT ART_ID FROM S_ARTICLE LIMIT #{limit,jdbcType=INTEGER}, #{count,jdbcType=INTEGER}) t 
+		(SELECT ART_ID FROM BARTICLE LIMIT #{limit,jdbcType=INTEGER}, #{count,jdbcType=INTEGER}) t 
 		on t.ART_ID=a.ART_ID; 
 	</select>
 

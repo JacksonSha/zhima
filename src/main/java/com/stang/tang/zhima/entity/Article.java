@@ -14,6 +14,7 @@ public class Article extends BaseEntity {
 	private Integer clickNum;
 	private Integer likeNum;
 	private Integer commentNum;
+	private String contentDesc;
 	private String contentText;
 	private String contentHtml;
 	private Date createDt;
@@ -92,6 +93,14 @@ public class Article extends BaseEntity {
 
 	public void setCommentNum(Integer commentNum) {
 		this.commentNum = commentNum;
+	}
+
+	public String getContentDesc() {
+		return contentDesc;
+	}
+
+	public void setContentDesc(String contentDesc) {
+		this.contentDesc = contentDesc;
 	}
 
 	public String getContentText() {
