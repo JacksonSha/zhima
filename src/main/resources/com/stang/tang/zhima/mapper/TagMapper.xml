@@ -5,7 +5,7 @@
 		<id column="TAG_ID" property="id" jdbcType="INTEGER" />
 		<result column="TAG_NAME" property="name" jdbcType="VARCHAR" />
 		<result column="TAG_DESC" property="desc" jdbcType="VARCHAR" />
-		<result column="TAG_CREATE_DT" property="createDt" jdbcType="DATETIME" />
+		<result column="TAG_CREATE_DT" property="createDt" jdbcType="DATE" />
 	</resultMap>
 
 	<sql id="ColumnList">

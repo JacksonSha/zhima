@@ -11,10 +11,10 @@
 		<result column="ART_CLICK_NUM" property="clickNum" jdbcType="INTEGER" />
 		<result column="ART_LIKE_NUM" property="likeNum" jdbcType="INTEGER" />
 		<result column="ART_COMMENT_NUM" property="commentNum" jdbcType="INTEGER" />
-		<result column="ART_CONTENT_TEXT" property="contentText" jdbcType="TEXT" />
-		<result column="ART_CONTENT_HTML" property="contentHtml" jdbcType="TEXT" />
-		<result column="ART_CREATE_DT" property="createDt" jdbcType="DATETIME" />
-		<result column="ART_UPDATE_DT" property="updateDt" jdbcType="DATETIME" />
+		<result column="ART_CONTENT_TEXT" property="contentText" jdbcType="LONGVARCHAR" />
+		<result column="ART_CONTENT_HTML" property="contentHtml" jdbcType="LONGVARCHAR" />
+		<result column="ART_CREATE_DT" property="createDt" jdbcType="DATE" />
+		<result column="ART_UPDATE_DT" property="updateDt" jdbcType="DATE" />
 	</resultMap>
 
 	<sql id="ColumnList">
@@ -22,5 +22,12 @@
 	ART_CLICK_NUM,ART_LIKE_NUM,ART_COMMENT_NUM,
 	ART_CONTENT_TEXT,ART_CONTENT_HTML,ART_CREATE_DT,ART_UPDATE_DT
 	</sql>
+
+	<select id="getArticlesByPage" resultMap="BaseResultMap">
+		SELECT a.* FROM S_ARTICLE a 
+		RIGHT JOIN 
+		(SELECT ART_ID FROM S_ARTICLE LIMIT #{limit,jdbcType=INTEGER}, #{count,jdbcType=INTEGER}) t 
+		on t.ART_ID=a.ART_ID; 
+	</select>
 
 </mapper>

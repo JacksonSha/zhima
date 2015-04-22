@@ -10,7 +10,7 @@
 		<result column="USR_HEADIMG" property="headImg" jdbcType="VARCHAR" />
 		<result column="USR_FROM" property="from" jdbcType="VARCHAR" />
 		<result column="USR_PROFILE" property="profile" jdbcType="VARCHAR" />
-		<result column="USR_REGISTER_DT" property="registerDt" jdbcType="DATETIME" />
+		<result column="USR_REGISTER_DT" property="registerDt" jdbcType="DATE" />
 	</resultMap>
 
 	<sql id="ColumnList">

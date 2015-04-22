@@ -8,6 +8,6 @@
 		<setting name="safeRowBoundsEnabled" value="false"></setting>
 	</settings>
 	<typeAliases>
-		<package name="com.stang.tang.zhima.mapper" />
+		<package name="com.stang.tang.zhima.entity"/>
 	</typeAliases>
 </configuration>
