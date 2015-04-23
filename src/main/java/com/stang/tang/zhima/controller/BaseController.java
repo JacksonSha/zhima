@@ -12,7 +12,7 @@ import com.google.gson.GsonBuilder;
 
 public class BaseController {
 	protected static Gson gson = new GsonBuilder().setDateFormat(
-			"YYYY-MM-dd HH:mm:ss").create();
+			"yyyy-MM-dd'T'HH:mm:ss.SSSZ").create();
 
 	public static String HOST_URL_VALUE = null;
 

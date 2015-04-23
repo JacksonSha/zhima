@@ -66,16 +66,6 @@
 			<a href="/" class="weixin">
 			<img style="width:100%; max-width:25rem;" src="${pageContext.request.contextPath}/webresource/images/weixin.png"/>
 			</a>
-			
-			<!-- <h2 class="heading sr-only">基本信息</h2>
-			<div class="content">
-				<ul class="list-unstyled">
-				<li><i class="fa fa-map-marker"></i><span class="sr-only">籍贯:</span>江苏南通</li>
-				<li><i class="fa fa-envelope-o"></i><span class="sr-only">邮箱:</span><a href="#">stang003@163.com</a></li>
-				<li><i class="fa fa-link"></i><span class="sr-only">个人博客:</span><a href="#">http://www.stangtang.com</a></li>
-				</ul>
-			</div>//content
-			 -->
 		</div><!--//section-inner-->
 	</aside><!--//aside-->
 	<aside class="section">

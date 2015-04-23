@@ -123,14 +123,15 @@ body {
   background: #17baef;
 }
 .container {
-  max-width:1000px;
+  max-width:1100px;
 }
 .primary, .secondary {
   position: static;
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   body {
-    background: linear-gradient(to top, rgb(7, 99, 128) 0%, rgb(85, 145, 160) 30%, rgb(34, 195, 235) 100%);
+  	background: #17baef;
+    /* background: linear-gradient(to top, rgb(7, 99, 128) 0%, rgb(85, 145, 160) 30%, rgb(34, 195, 235) 100%); */
   }
 }
 @media (min-width: 992px) {
@@ -309,6 +310,10 @@ header .navbar-fixed-top {
 	border-bottom: 0.1rem solid #EEE;
 }
 
+.section-inner .article:hover {
+	background: #f9f9f9;
+}
+
 .section-inner .article .heading {
 	font-size: 2rem;
 	margin-top: 0;
@@ -363,6 +368,24 @@ header .navbar-fixed-top {
 	.section-inner .article .summary a {
 		float: none;
 	}
+}
+
+/* ======= pager ======= */
+.pager span {
+	cursor: pointer;
+	float: left;
+	margin: 2px 5px;
+	padding: 5px 12px;
+	color: #FFF;
+	background: #888888;
+}
+
+.pager span.current-page {
+	background: #17baef;
+}
+
+.pager span:hover {
+	background: #17baef;
 }
 
 /* ======= rank tag ======= */

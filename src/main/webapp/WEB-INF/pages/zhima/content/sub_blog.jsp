@@ -41,11 +41,30 @@
 			</div>
 			<p class="info"><span>2015-02-25</span><span>作者：Jackson</span><span>个人博客：[<a href="/jstt/web/">网站建设</a>]</span></p>   
 		</div>
+		<div class="pager">
+			<span>首页</span>
+			<span>上一页</span>
+			<span class="current-page">1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<span>5</span>
+			<span>下一页</span>
+			<span>尾页</span>
+		</div>
 	</div>
 </section><!--//section-->
 </div><!--//primary-->
 
 <div class="secondary col-md-4 col-sm-12 col-xs-12">
+	<aside class="section">
+		<div class="section-inner">
+			<h3 class="section-heading">标签分类</h3>
+			<div class="content">
+				<img style="width:100%;" src="http://www.yangqq.com/web/410/images/ad300x100.jpg"></img>
+			</div><!--//content-->
+		</div><!--//section-inner-->
+	</aside><!--//aside-->
 	<aside class="section">
 		<div class="section-inner">
 			<h3 class="section-heading">标签分类</h3>
