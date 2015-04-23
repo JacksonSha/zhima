@@ -24,10 +24,19 @@
 	ART_CONTENT_DESC,ART_CONTENT_TEXT,ART_CONTENT_HTML,ART_CREATE_DT,ART_UPDATE_DT
 	</sql>
 
+	<select id="getArticleById" parameterType="java.lang.Integer"
+		resultMap="BaseResultMap">
+		SELECT a.*, x.ART_CONTENT_HTML
+		FROM BARTICLE a
+		LEFT JOIN XARTICLE x ON a.ART_ID=x.ART_ID
+		WHERE a.ART_ID=#{artId,jdbcType=INTEGER} 
+	</select>
+
 	<select id="getArticlesByPage" resultMap="BaseResultMap">
 		SELECT a.* FROM BARTICLE a 
 		RIGHT JOIN 
-		(SELECT ART_ID FROM BARTICLE LIMIT #{limit,jdbcType=INTEGER}, #{count,jdbcType=INTEGER}) t 
+		(SELECT ART_ID FROM BARTICLE 
+		LIMIT #{limit,jdbcType=INTEGER}, #{count,jdbcType=INTEGER}) t 
 		on t.ART_ID=a.ART_ID; 
 	</select>
 

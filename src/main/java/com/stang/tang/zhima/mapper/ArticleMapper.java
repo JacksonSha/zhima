@@ -16,6 +16,8 @@ public interface ArticleMapper {
 //
 //	public int getArticlesNum();
 
+	public Article getArticleById(Integer artId);
+
 	public List<Article> getArticlesByPage(@Param("limit") Integer limit,
 			@Param("count") Integer count);
 //

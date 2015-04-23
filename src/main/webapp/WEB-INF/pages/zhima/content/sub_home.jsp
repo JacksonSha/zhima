@@ -1,5 +1,7 @@
 <%@page pageEncoding="UTF-8"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <style type="text/css">
 @media (min-width:992px) {
@@ -19,42 +21,17 @@
 <section class="section">
 	<div class="section-inner">
 		<h3 class="section-heading">文章推荐</h3>
-		<div class="article">
-			<h2 class="heading">博客之初</h2>
-			<img class="img-responsive" src="${pageContext.request.contextPath}/webresource/images/projects/project-featured.png"/>
-			<div class="summary">
-				<p>Hello, World! 程序猿都懂的。我想做自己的网站有一段时间了，现在终于陆陆续续着手做了，有句话说得好，当你开始的时候最难的部分已经解决了，所以，开始吧……</p>
-				<a title="博客之初" href="#" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+		<c:forEach begin="1" end="6">
+			<div class="article">
+				<h2 class="heading">博客之初</h2>
+				<img class="img-responsive" src="${pageContext.request.contextPath}/webresource/images/projects/project-featured.png"/>
+				<div class="summary">
+					<p>Hello, World! 程序猿都懂的。我想做自己的网站有一段时间了，现在终于陆陆续续着手做了，有句话说得好，当你开始的时候最难的部分已经解决了，所以，开始吧……</p>
+					<a title="博客之初" href="#" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+				</div>
+				<p class="info"><span>2015-02-25</span><span>作者：Jackson</span><span>个人博客：[<a href="/jstt/web/">网站建设</a>]</span></p>   
 			</div>
-			<p class="info"><span>2015-02-25</span><span>作者：Jackson</span><span>个人博客：[<a href="/jstt/web/">网站建设</a>]</span></p>   
-		</div>
-		<div class="article">
-			<h2 class="heading">博客之初</h2>
-			<img class="img-responsive" src="${pageContext.request.contextPath}/webresource/images/projects/project-featured.png"/>
-			<div class="summary">
-				<p>Hello, World! 程序猿都懂的。我想做自己的网站有一段时间了，现在终于陆陆续续着手做了，有句话说得好，当你开始的时候最难的部分已经解决了，所以，开始吧……</p>
-				<a title="博客之初" href="#" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
-			</div>
-			<p class="info"><span>2015-02-25</span><span>作者：Jackson</span><span>个人博客：[<a href="/jstt/web/">网站建设</a>]</span></p>   
-		</div>
-		<div class="article">
-			<h2 class="heading">博客之初</h2>
-			<img class="img-responsive" src="${pageContext.request.contextPath}/webresource/images/projects/project-featured.png"/>
-			<div class="summary">
-				<p>Hello, World! 程序猿都懂的。我想做自己的网站有一段时间了，现在终于陆陆续续着手做了，有句话说得好，当你开始的时候最难的部分已经解决了，所以，开始吧……</p>
-				<a title="博客之初" href="#" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
-			</div>
-			<p class="info"><span>2015-02-25</span><span>作者：Jackson</span><span>个人博客：[<a href="/jstt/web/">网站建设</a>]</span></p>   
-		</div>
-		<div class="article">
-			<h2 class="heading">博客之初</h2>
-			<img class="img-responsive" src="${pageContext.request.contextPath}/webresource/images/projects/project-featured.png"/>
-			<div class="summary">
-				<p>Hello, World! 程序猿都懂的。我想做自己的网站有一段时间了，现在终于陆陆续续着手做了，有句话说得好，当你开始的时候最难的部分已经解决了，所以，开始吧……</p>
-				<a title="博客之初" href="#" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
-			</div>
-			<p class="info"><span>2015-02-25</span><span>作者：Jackson</span><span>个人博客：[<a href="/jstt/web/">网站建设</a>]</span></p>   
-		</div>
+		</c:forEach>
 	</div>
 </section><!--//section-->
 </div><!--//primary-->

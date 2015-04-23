@@ -146,7 +146,7 @@ $(function(){
 	</div><!--//row-->
 	</div><!--//masonry-->
 
-    <jsp:include page="../../common/foot.jsp"/>
+    <jsp:include page="../../common/footer.jsp"/>
 </body>
 </html> 
 

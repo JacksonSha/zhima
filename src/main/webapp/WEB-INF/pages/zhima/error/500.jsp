@@ -14,33 +14,22 @@ var rootUrl = "${pageContext.request.contextPath}";
 </head>
 
 <body>
-	<div class="wrapper">
-    	<!-- HEADER -->
-        <header>
-            <h1></h1>
-            <div class="hero-image"></div>
-        </header>
-    	<!-- END OF HEADER -->
-        
-        <!-- CONTENT -->
-        <div class="content">
-        <h2 class="copy greyFont">
-        <span class="redFont">Internal server error</span>
-        <br/>
-        <span>Sorry. Something is wrong with server.</span>
-        <br/>
+    <jsp:include page="../common/header.jsp"/>
+
+	<div class="banner"></div>
+
+	<div class="container sections-wrapper">
+	<div class="row">
+	<h2 class="copy greyFont">
+		<span class="redFont">Internal server error</span>
+		<br/>
+		<span>Sorry. Something is wrong with server.</span>
+		<br/>
 		<span>We are working on that.</span>
-        </h2>
-        <div style="margin-bottom:100px;"></div>
-		<div class="clear"></div>
-        </div>
-        <!-- END OF CONTENT -->
-        
-        <!-- FOOTER -->
-        <footer>
-           <jsp:include page="../common/foot.jsp"></jsp:include>
-        </footer>
-        <!-- END OF FOOTER -->
-    </div>
+	</h2>
+	</div><!--//row-->
+	</div><!--//masonry-->
+
+    <jsp:include page="../common/footer.jsp"/>
 </body>
 </html>

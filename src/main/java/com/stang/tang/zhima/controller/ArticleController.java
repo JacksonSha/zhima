@@ -26,12 +26,22 @@ public class ArticleController extends BaseController {
 
 	@ResponseBody
 	@RequestMapping(value = "/list/{page}", produces = P_JSON)
-	private String getIndex(@PathVariable("page") Integer page,
+	private String getArticleList(@PathVariable("page") Integer page,
 			HttpServletRequest request) {
 		LOGGER.info(request.getRequestURI());
 		List<Article> list = articleService.getArticlesByPage(page, 10);
 		LOGGER.info(gson.toJson(list));
 		return gson.toJson(list);
+	}
+
+	@ResponseBody
+	@RequestMapping(value = "/view/{aid}", produces = P_JSON)
+	private String getArticleById(@PathVariable("aid") Integer aid,
+			HttpServletRequest request) {
+		LOGGER.info(request.getRequestURI());
+		Article art = articleService.getArticleById(aid);
+		LOGGER.info(gson.toJson(art));
+		return gson.toJson(art);
 	}
 
 }

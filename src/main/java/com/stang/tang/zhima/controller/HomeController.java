@@ -13,7 +13,7 @@ public class HomeController extends BaseController {
 	private static final Logger LOGGER = LoggerFactory
 			.getLogger(HomeController.class);
 
-	@RequestMapping("/")
+	@RequestMapping("")
 	private String getIndex(HttpServletRequest request) {
 		LOGGER.info(getHostUrl(request));
 		return "content/main";
@@ -31,6 +31,20 @@ public class HomeController extends BaseController {
 			@PathVariable("nav") String nav) {
 		LOGGER.info(request.getRequestURI());
 		return "content/" + nav;
+	}
+
+	@RequestMapping("/blog/page/{page}")
+	private String getBlogPage(HttpServletRequest request,
+			@PathVariable(value = "page") Integer page) {
+		LOGGER.info(request.getRequestURI());
+		return "content/main";
+	}
+
+	@RequestMapping("/blog/article/{aid}")
+	private String getBlogArticle(HttpServletRequest request,
+			@PathVariable(value = "aid") String aid) {
+		LOGGER.info(request.getRequestURI());
+		return "content/main";
 	}
 
 	@RequestMapping("/admin/{nav}")

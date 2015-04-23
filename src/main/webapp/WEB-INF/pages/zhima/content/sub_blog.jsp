@@ -1,45 +1,110 @@
 <%@page pageEncoding="UTF-8"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
+<script type="text/template" id="articleList-template">
+<div class="article">
+	<h2 class="heading">{{title}}</h2>
+	<img class="img-responsive" src="{{headImg}}"/>
+	<div class="summary">
+		<p>{{contentDesc}}</p>
+		<a title="{{title}}" href="${pageContext.request.contextPath}/blog/article/{{artId}}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+	</div>
+	<p class="info"><span>{{createDt}}</span><span>作者：{{author}}</span><span>个人博客：[<a href="/jstt/web/">网站建设</a>]</span></p>   
+</div>
+</script>
+
+<script type="text/template" id="articleView-template">
+<div class="article">
+	<h2 class="heading">{{title}}</h2>
+	<img class="img-responsive" src="{{headImg}}"/>
+	<div class="summary">
+		<p>{{contentDesc}}</p>
+		<a title="{{title}}" href="${pageContext.request.contextPath}/blog/article/{{artId}}" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+	</div>
+	<p class="info"><span>{{createDt}}</span><span>作者：{{author}}</span><span>个人博客：[<a href="/jstt/web/">网站建设</a>]</span></p>   
+</div>
+</script>
+
+<script type="text/javascript">
+$(function(){
+	var pathname = window.location.pathname;
+	var paths = pathname.replace(rootUrl, "").split("/", -1);
+	console.log(paths, paths.length);
+	var articlePage = function(page){
+		$.post(rootUrl+"/article/list/"+page,null,
+				function(resp){
+			var el = $(".articles");
+			$(el).empty();
+			var artTmp=_.template($("#articleList-template").html());
+			for(var i=0;i<resp.length;i++){
+				var art=resp[i];
+				$(el).append(artTmp({
+					artId: art.id,
+					title: art.title,
+					headImg: art.headImg,
+					contentDesc: art.contentDesc,
+					author: art.author,
+					createDt: $.format.date(new Date(art.createDt), 'yyyy-MM-dd')
+				}));
+			}
+		});
+	};
+	var articleView = function(artId){
+		$.post(rootUrl+"/article/view/"+num,null,
+				function(resp){
+			console.log(resp);
+			var el = $(".articles");
+			$(el).empty();
+			var artTmp=_.template($("#articleView-template").html());
+			for(var i=0;i<resp.length;i++){
+				var art=resp[i];
+				$(el).append(artTmp({
+					artId: art.id,
+					title: art.title,
+					headImg: art.headImg,
+					contentDesc: art.contentDesc,
+					author: art.author,
+					createDt: $.format.date(new Date(art.createDt), 'yyyy-MM-dd')
+				}));
+			}
+		});
+	};
+	switch(paths.length){
+	case 2:
+		articlePage(1);
+		break;
+	case 4:
+		var num = paths[3];
+		if(paths[2]=="page"){
+			articlePage(num);
+		}else if(paths[2]=="article"){
+			articleView(num);
+		}
+		break;
+	default:
+		break;
+	}
+	var page = paths[1];
+	(page=="") && (page="home");
+});
+</script>
 
 <div class="primary col-md-8 col-sm-12 col-xs-12">
 <section class="section">
 	<div class="section-inner">
 		<h3 class="section-heading">最新文章</h3>
-		<div class="article">
-			<h2 class="heading">博客之初</h2>
-			<img class="img-responsive" src="${pageContext.request.contextPath}/webresource/images/projects/project-featured.png"/>
-			<div class="summary">
-				<p>Hello, World! 程序猿都懂的。我想做自己的网站有一段时间了，现在终于陆陆续续着手做了，有句话说得好，当你开始的时候最难的部分已经解决了，所以，开始吧……</p>
-				<a title="博客之初" href="#" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
-			</div>
-			<p class="info"><span>2015-02-25</span><span>作者：Jackson</span><span>个人博客：[<a href="/jstt/web/">网站建设</a>]</span></p>   
-		</div>
-		<div class="article">
-			<h2 class="heading">博客之初</h2>
-			<img class="img-responsive" src="${pageContext.request.contextPath}/webresource/images/projects/project-featured.png"/>
-			<div class="summary">
-				<p>Hello, World! 程序猿都懂的。我想做自己的网站有一段时间了，现在终于陆陆续续着手做了，有句话说得好，当你开始的时候最难的部分已经解决了，所以，开始吧……</p>
-				<a title="博客之初" href="#" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
-			</div>
-			<p class="info"><span>2015-02-25</span><span>作者：Jackson</span><span>个人博客：[<a href="/jstt/web/">网站建设</a>]</span></p>   
-		</div>
-		<div class="article">
-			<h2 class="heading">博客之初</h2>
-			<img class="img-responsive" src="${pageContext.request.contextPath}/webresource/images/projects/project-featured.png"/>
-			<div class="summary">
-				<p>Hello, World! 程序猿都懂的。我想做自己的网站有一段时间了，现在终于陆陆续续着手做了，有句话说得好，当你开始的时候最难的部分已经解决了，所以，开始吧……</p>
-				<a title="博客之初" href="#" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
-			</div>
-			<p class="info"><span>2015-02-25</span><span>作者：Jackson</span><span>个人博客：[<a href="/jstt/web/">网站建设</a>]</span></p>   
-		</div>
-		<div class="article">
-			<h2 class="heading">博客之初</h2>
-			<img class="img-responsive" src="${pageContext.request.contextPath}/webresource/images/projects/project-featured.png"/>
-			<div class="summary">
-				<p>Hello, World! 程序猿都懂的。我想做自己的网站有一段时间了，现在终于陆陆续续着手做了，有句话说得好，当你开始的时候最难的部分已经解决了，所以，开始吧……</p>
-				<a title="博客之初" href="#" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
-			</div>
-			<p class="info"><span>2015-02-25</span><span>作者：Jackson</span><span>个人博客：[<a href="/jstt/web/">网站建设</a>]</span></p>   
+		<div class="articles">
+			<%-- <div class="article">
+				<h2 class="heading">博客之初</h2>
+				<img class="img-responsive" src="${pageContext.request.contextPath}/webresource/images/projects/project-featured.png"/>
+				<div class="summary">
+					<p>Hello, World! 程序猿都懂的。我想做自己的网站有一段时间了，现在终于陆陆续续着手做了，有句话说得好，当你开始的时候最难的部分已经解决了，所以，开始吧……</p>
+					<a title="博客之初" href="${pageContext.request.contextPath}/" target="_blank" class="readmore">阅读全文&gt;&gt;</a>
+				</div>
+				<p class="info"><span>2015-02-25</span><span>作者：Jackson</span><span>个人博客：[<a href="/jstt/web/">网站建设</a>]</span></p>   
+			</div> --%>
 		</div>
 		<div class="pager">
 			<span>首页</span>
@@ -59,7 +124,7 @@
 <div class="secondary col-md-4 col-sm-12 col-xs-12">
 	<aside class="section">
 		<div class="section-inner">
-			<h3 class="section-heading">标签分类</h3>
+			<h3 class="section-heading">关注我</h3>
 			<div class="content">
 				<img style="width:100%;" src="http://www.yangqq.com/web/410/images/ad300x100.jpg"></img>
 			</div><!--//content-->
