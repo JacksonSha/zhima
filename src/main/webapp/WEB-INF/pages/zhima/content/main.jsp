@@ -18,13 +18,23 @@ $(function(){
 	    }
 	});
 	var pathname = window.location.pathname;
-	pathname = pathname.replace(rootUrl, "").split("/", -1);
-	console.log(pathname, pathname.length);
-	var page = pathname[1];
-	(page=="") && (page="home");
-	//console.log(pathname,page);
-	if(page!="home" && page!="blog" && page!="about" && page!="guest"){
+	var paths = pathname.replace(rootUrl, "").split("/", -1);
+	var page = paths[1];
+	switch(page){
+	case "":
+		page="home";
+		break;
+	case "blog":
+		break;
+	case "about":
+		break;
+	case "guest":
+		break;
+	case "single":
+		break;
+	default:
 		window.location.pathname = rootUrl+"/";
+		break;
 	}
 	$.post(rootUrl+"/show/sub_"+page,null,function(resp){
 		$(".container .row").empty().html(resp);

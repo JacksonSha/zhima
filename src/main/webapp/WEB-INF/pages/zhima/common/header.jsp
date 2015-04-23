@@ -20,7 +20,7 @@
 		<div class="navbar-collapse collapse" id="navbar-collapse" aria-expanded="false" style="height: 1px;">
 			<ul class="nav navbar-nav">
 			<li class="nav-item sr-only active"><a class="scrollto" href="#promo">首页</a></li>
-			<li class="nav-item"><a class="scrollto" href="${pageContext.request.contextPath}">首页</a></li>
+			<li class="nav-item"><a class="scrollto" href="${pageContext.request.contextPath}/">首页</a></li>
 			<li class="nav-item"><a class="scrollto" href="${pageContext.request.contextPath}/blog">博客</a></li>
 			<li class="nav-item"><a class="scrollto" href="${pageContext.request.contextPath}/about">关于我</a></li>
 			<li class="nav-item"><a class="scrollto" href="${pageContext.request.contextPath}/guest">留言板</a></li>

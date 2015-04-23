@@ -297,7 +297,7 @@ header .navbar-fixed-top {
 	margin: 0 0 1rem 0;
 	padding-bottom: 1rem;
 	color: #333;
-	border-bottom: #EC5852 0.4rem solid;
+	border-bottom: #FF6458 0.4rem solid;
 }
 .section-inner .lastest-head {
 	color: #17baef;
@@ -374,9 +374,10 @@ header .navbar-fixed-top {
 .pager span {
 	cursor: pointer;
 	float: left;
-	margin: 2px 5px;
-	padding: 5px 12px;
+	margin: 0.2rem 0.3rem;
+	padding: 0.5rem 1.2rem;
 	color: #FFF;
+	font-size: 1.2rem;
 	background: #888888;
 }
 

@@ -33,16 +33,24 @@ public class HomeController extends BaseController {
 		return "content/" + nav;
 	}
 
-	@RequestMapping("/blog/page/{page}")
-	private String getBlogPage(HttpServletRequest request,
+	@RequestMapping("/blog/{page}")
+	private String getBlogListByDate(HttpServletRequest request,
 			@PathVariable(value = "page") Integer page) {
 		LOGGER.info(request.getRequestURI());
 		return "content/main";
 	}
 
-	@RequestMapping("/blog/article/{aid}")
-	private String getBlogArticle(HttpServletRequest request,
-			@PathVariable(value = "aid") String aid) {
+	@RequestMapping("/blog/{tagId}/{artId}")
+	private String getBlogListByTag(HttpServletRequest request,
+			@PathVariable(value = "tagId") Integer tagId,
+			@PathVariable(value = "artId") Integer artId) {
+		LOGGER.info(request.getRequestURI());
+		return "content/main";
+	}
+
+	@RequestMapping("/single/{artId}")
+	private String getBlogArticleById(HttpServletRequest request,
+			@PathVariable(value = "artId") Integer artId) {
 		LOGGER.info(request.getRequestURI());
 		return "content/main";
 	}
