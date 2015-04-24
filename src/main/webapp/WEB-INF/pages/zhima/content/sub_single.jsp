@@ -5,8 +5,8 @@
 
 <script type="text/template" id="singleView-template">
 	<h3 class="title">{{title}}</h3>
+	<div class="info"><span>{{createDt}}</span><span>作者：{{author}}</span><span>个人博客：[<a href="/jstt/web/">网站建设</a>]</span></div>
 	{{contentHtml}}
-	<p class="info"><span>{{createDt}}</span><span>作者：{{author}}</span><span>个人博客：[<a href="/jstt/web/">网站建设</a>]</span></p>   
 </script>
 
 <script type="text/javascript">
