@@ -383,10 +383,15 @@ header .navbar-fixed-top {
 }
 
 .section-inner .single .info {
+	color: #838383;
 	padding: 0.5rem 0rem;
 	margin: 1.5rem 0rem;
 	text-align: center;
 	border: #AFAFAF 0.1rem solid;
+}
+
+.section-inner .single .info span {
+	margin: 0 0.5rem;
 }
 
 .section-inner .single .text {
@@ -409,6 +414,24 @@ header .navbar-fixed-top {
 
 .pager span:hover {
 	background: #17baef;
+}
+
+.pager .article-link {
+	float: left;
+}
+
+.pager .article-link a {
+	cursor: pointer;
+	font-size: 1.6rem;
+	line-height: 2;
+}
+
+.pager .article-link:hover span {
+	background: #17baef;
+}
+
+.pager .article-link:hover a {
+	color: #2d844e;
 }
 
 /* ======= rank tag ======= */

@@ -5,7 +5,7 @@
 
 <script type="text/template" id="singleView-template">
 	<h3 class="title">{{title}}</h3>
-	<div class="info"><span>{{createDt}}</span><span>作者：{{author}}</span><span>个人博客：[<a href="/jstt/web/">网站建设</a>]</span></div>
+	<div class="info"><span>发布时间：{{createDt}}</span><span>作者：{{author}}</span><span>浏览：</span></div>
 	{{contentHtml}}
 </script>
 
@@ -44,17 +44,37 @@ $(function(){
 });
 </script>
 
+<script type="text/javascript">
+(function(){
+var url = "http://widget.weibo.com/distribution/comments.php?width=0&url=auto&ralateuid=3093895670&appkey=3725229042&dpc=1";
+url = url.replace("url=auto", "url=" + encodeURIComponent(document.URL)); 
+$(".comment").html('<iframe id="WBCommentFrame" src="' + url + '" scrolling="no" frameborder="0" style="width:100%"></iframe>');
+})();
+</script>
+<script src="http://tjs.sjs.sinajs.cn/open/widget/js/widget/comment.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+window.WBComment.init({
+    "id": "WBCommentFrame"
+});
+</script>
+
 <div class="primary col-md-8 col-sm-12 col-xs-12">
 <section class="section">
 	<div class="section-inner">
 		<div class="single">
 		</div>
 		<div class="pager">
-			<span>上一篇</span>
-			<a>阿里云服务器选型</a>
+			<div class="article-link">
+				<span>上一篇</span>
+				<a>阿里云服务器选型</a>
+			</div>
 			<div class="clear"></div>
-			<span>下一篇</span>
-			<a>Web应用的缓存设计模式</a>
+			<div class="article-link">
+				<span>下一篇</span>
+				<a>Web应用的缓存设计模式</a>
+			</div>
+		</div>
+		<div class="comment">
 		</div>
 	</div>
 </section><!--//section-->
