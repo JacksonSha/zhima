@@ -4,10 +4,23 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <script type="text/template" id="singleView-template">
-	<h3 class="title">{{title}}</h3>
-	<div class="info"><span>发布时间：{{createDt}}</span><span>作者：{{author}}</span><span>浏览：</span></div>
-	{{contentHtml}}
+<h3 class="title">{{title}}</h3>
+<div class="info">
+<span style="background: none;padding: 0;">发布时间：2015-01-09</span>
+<span style="background: none;padding: 0;">编辑：杨青</span>
+<span style="background: none;padding: 0;">阅读（10003）</span>
+</div>
+<!--
+<div class="info">
+<span class="date">{{createDt}}</span>
+<span class="author">{{author}}</span>
+<span class="view">{{clickNum}}</span>
+</div>
+-->
+{{contentHtml}}
 </script>
+
+<script type="text/javascript" src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3725229042" charset="utf-8"></script>
 
 <script type="text/javascript">
 $(function(){
@@ -27,6 +40,7 @@ $(function(){
 				contentDesc: art.contentDesc,
 				contentHtml: art.contentHtml,
 				author: art.author,
+				clickNum: art.clickNum,
 				createDt: $.format.date(new Date(art.createDt), 'yyyy-MM-dd')
 			}));
 		});
@@ -39,22 +53,7 @@ $(function(){
 	default:
 		break;
 	}
-	var page = paths[1];
-	(page=="") && (page="home");
-});
-</script>
-
-<script type="text/javascript">
-(function(){
-var url = "http://widget.weibo.com/distribution/comments.php?width=0&url=auto&ralateuid=3093895670&appkey=3725229042&dpc=1";
-url = url.replace("url=auto", "url=" + encodeURIComponent(document.URL)); 
-$(".comment").html('<iframe id="WBCommentFrame" src="' + url + '" scrolling="no" frameborder="0" style="width:100%"></iframe>');
-})();
-</script>
-<script src="http://tjs.sjs.sinajs.cn/open/widget/js/widget/comment.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript">
-window.WBComment.init({
-    "id": "WBCommentFrame"
+	$(".comment").html('<wb:comments url="auto" width="auto" appkey="3725229042" ralateuid="3093895670" />');
 });
 </script>
 
@@ -129,3 +128,4 @@ window.WBComment.init({
 		</div><!--//section-inner-->
 	</aside><!--//aside-->
 </div><!--//secondary-->
+</html>

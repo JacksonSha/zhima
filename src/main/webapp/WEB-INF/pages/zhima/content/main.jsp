@@ -2,7 +2,7 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh" xmlns:wb="http://open.weibo.com/wb">
 <head>
 <jsp:include page="../common/include.jsp"/>
 
@@ -55,5 +55,5 @@ $(function(){
 
     <jsp:include page="../common/footer.jsp"/>
 </body>
-</html> 
+</html>
 

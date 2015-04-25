@@ -383,15 +383,30 @@ header .navbar-fixed-top {
 }
 
 .section-inner .single .info {
+	font-size: 1.2rem;
 	color: #838383;
 	padding: 0.5rem 0rem;
 	margin: 1.5rem 0rem;
 	text-align: center;
-	border: #AFAFAF 0.1rem solid;
+	border: #D1D1D1 0.1rem solid;
 }
 
 .section-inner .single .info span {
 	margin: 0 0.5rem;
+	padding-left: 1.8rem;
+	background: url('../images/icons.png') no-repeat;
+}
+
+.section-inner .single .info .date {
+	background-position: 0 -301px;
+}
+
+.section-inner .single .info .author {
+	background-position: 0 -921px;
+}
+
+.section-inner .single .info .view {
+	background-position: 0 -481px;
 }
 
 .section-inner .single .text {
