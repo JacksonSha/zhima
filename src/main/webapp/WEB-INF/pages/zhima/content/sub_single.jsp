@@ -5,18 +5,18 @@
 
 <script type="text/template" id="singleView-template">
 <h3 class="title">{{title}}</h3>
+<!--
 <div class="info">
 <span style="background: none;padding: 0;">发布时间：2015-01-09</span>
 <span style="background: none;padding: 0;">编辑：杨青</span>
 <span style="background: none;padding: 0;">阅读（10003）</span>
 </div>
-<!--
+-->
 <div class="info">
 <span class="date">{{createDt}}</span>
 <span class="author">{{author}}</span>
 <span class="view">{{clickNum}}</span>
 </div>
--->
 {{contentHtml}}
 </script>
 
